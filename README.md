@@ -1,5 +1,11 @@
 # 🫀 PulseSense-AI
 
+<p align="center">
+  <a href="https://ecg-arrhythmia-classifier-agkz7exbruceewwzceuxjd.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀 Live Demo-Click Here-brightgreen?style=for-the-badge">
+  </a>
+</p>
+
 ### Smart ECG Arrhythmia Detection using Deep Learning (LSTM)
 
 ---
@@ -7,7 +13,19 @@
 ## 📌 Project Overview
 
 **PulseSense-AI** is an AI-powered healthcare system that analyzes ECG (Electrocardiogram) signals to detect cardiac arrhythmias in real-time.
-It uses a deep learning LSTM model to classify heart conditions and helps in early diagnosis.
+It uses a deep learning LSTM model to classify heart conditions and assist in early diagnosis.
+
+🚀 The system is deployed as an interactive web application using Streamlit, enabling users to upload ECG data and get instant predictions.
+
+---
+
+## 🌐 Live Demo
+
+👉 https://ecg-arrhythmia-classifier-agkz7exbruceewwzceuxjd.streamlit.app/
+
+⚡ Upload ECG data (CSV format) and get instant arrhythmia predictions powered by AI.
+
+> ⚠️ Note: This is a deployed Streamlit application for demonstration purposes. Model performance may vary based on input data quality.
 
 ---
 
@@ -15,10 +33,10 @@ It uses a deep learning LSTM model to classify heart conditions and helps in ear
 
 * 🧠 Deep Learning model (LSTM) for ECG classification
 * 📊 Detects multiple arrhythmia types
-* 🌐 Flask API for backend processing
-* 💻 Streamlit UI for interactive frontend
+* 🌐 Fully integrated Streamlit-based application (Frontend + Backend)
 * 📈 Real-time ECG signal prediction
 * ⚠️ Confidence-based prediction output
+* 📁 CSV upload support for batch analysis
 
 ---
 
@@ -35,7 +53,6 @@ It uses a deep learning LSTM model to classify heart conditions and helps in ear
 
 ```
 ecg-app/
-├── app.py
 ├── frontend.py
 ├── train_model.py
 ├── generate_sample_data.py
@@ -66,44 +83,16 @@ pip install -r requirements.txt
 
 ## ▶️ How to Run
 
-### 1️⃣ Train Model (Run once)
+### 1️⃣ Train Model (Optional - Run once)
 
 ```bash
 python train_model.py
 ```
 
-### 2️⃣ Start Backend (Flask)
+### 2️⃣ Run the Application
 
 ```bash
-python app.py
-```
-
-### 3️⃣ Start Frontend (Streamlit)
-
-```bash
-streamlit run frontend.py --server.port 5000
-```
-
----
-
-## 🔌 API Endpoints
-
-* `GET /health` → Check API status
-* `POST /predict` → Predict ECG signal
-
-### Example Response:
-
-```json
-{
-  "prediction": "Normal",
-  "confidence": 0.95,
-  "all_probabilities": {
-    "Normal": 0.95,
-    "AFib": 0.02,
-    "VTach": 0.01,
-    "PVC": 0.02
-  }
-}
+streamlit run frontend.py
 ```
 
 ---
@@ -119,23 +108,21 @@ streamlit run frontend.py --server.port 5000
 
 ---
 
-## 🌍 Real-World Use Case
+## 🌍 Real-World Use Cases
 
-This system can be used in:
-
-* 🏥 Hospitals for patient monitoring
-* ⌚ Wearable ECG devices
-* 🚑 Emergency alert systems
-* 🧑‍⚕️ Remote healthcare applications
+* 🏥 Hospital patient monitoring systems
+* ⌚ Wearable ECG health devices
+* 🚑 Emergency detection and alert systems
+* 🧑‍⚕️ Remote healthcare & telemedicine
 
 ---
 
 ## 🔮 Future Scope
 
 * 📱 Mobile app integration
-* ☁️ Cloud deployment
-* 📡 Real-time IoT ECG devices
-* 🚨 Emergency alert system (SMS/Email)
+* ☁️ Cloud-based scaling
+* 📡 Real-time IoT ECG device integration
+* 🚨 Automated emergency alerts (SMS/Email)
 
 ---
 
@@ -143,15 +130,15 @@ This system can be used in:
 
 * Python
 * TensorFlow / Keras
-* Flask
 * Streamlit
 * NumPy, Pandas, Scikit-learn
 
 ---
 
-## 👩‍💻 Authors
+## 👩‍💻 Author
 
 * **YOGA SREE S (24ADR185)**
+
 ---
 
 ## ⭐ Acknowledgement
@@ -167,4 +154,4 @@ For queries or collaboration:
 
 ---
 
-⭐ If you like this project, give it a star!
+⭐ If you like this project, don’t forget to give it a star!
