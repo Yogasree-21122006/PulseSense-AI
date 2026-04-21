@@ -1,0 +1,40 @@
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+bert_env/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+
+# Streamlit Cache
+.streamlit/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE / Editor Files
+.vscode/
+.idea/
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Model Files (we are UPLOADING them, so ignored lines are commented)
+# *.h5
+# *.pkl
