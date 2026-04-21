@@ -6,14 +6,15 @@
   </a>
 </p>
 
-### Smart ECG Arrhythmia Detection using Deep Learning (LSTM)
+### Smart ECG Arrhythmia Detection using Machine Learning
 
 ---
 
 ## 📌 Project Overview
 
 **PulseSense-AI** is an AI-powered healthcare system that analyzes ECG (Electrocardiogram) signals to detect cardiac arrhythmias in real-time.
-It uses a deep learning LSTM model to classify heart conditions and assist in early diagnosis.
+
+It uses a Machine Learning model with advanced signal feature extraction to classify heart conditions and assist in early diagnosis.
 
 🚀 The system is deployed as an interactive web application using Streamlit, enabling users to upload ECG data and get instant predictions.
 
@@ -29,14 +30,29 @@ It uses a deep learning LSTM model to classify heart conditions and assist in ea
 
 ---
 
+## 📥 Sample Test Files
+
+App test பண்ண இந்த files download பண்ணுங்க 👇
+
+| File | Condition | Download |
+|------|-----------|----------|
+| sample_normal.csv | 💚 Normal Heart | [Download](data/sample_normal.csv) |
+| sample_afib.csv | 🟡 Atrial Fibrillation | [Download](data/sample_afib.csv) |
+| sample_vtach.csv | 🔴 Ventricular Tachycardia | [Download](data/sample_vtach.csv) |
+| sample_pvc.csv | 🟠 Premature Ventricular Contraction | [Download](data/sample_pvc.csv) |
+
+> 📌 Download any file → Upload in the Live Demo → Click Predict!
+
+---
+
 ## 🚀 Features
 
-* 🧠 Deep Learning model (LSTM) for ECG classification
+* 🧠 ML model with advanced ECG signal feature extraction
 * 📊 Detects multiple arrhythmia types
-* 🌐 Fully integrated Streamlit-based application (Frontend + Backend)
-* 📈 Real-time ECG signal prediction
+* 🌐 Fully integrated Streamlit-based web application
+* 📈 Real-time ECG signal visualization
 * ⚠️ Confidence-based prediction output
-* 📁 CSV upload support for batch analysis
+* 📁 CSV upload support for easy testing
 
 ---
 
@@ -54,19 +70,17 @@ It uses a deep learning LSTM model to classify heart conditions and assist in ea
 ```
 ecg-app/
 ├── frontend.py
-├── train_model.py
-├── generate_sample_data.py
 ├── requirements.txt
 ├── model/
-│   ├── ecg_lstm_model.h5
+│   ├── ecg_model.pkl
 │   ├── label_encoder.pkl
+│   ├── scaler.pkl
 │   └── model_meta.pkl
 └── data/
     ├── sample_normal.csv
     ├── sample_afib.csv
     ├── sample_vtach.csv
-    ├── sample_pvc.csv
-    └── sample_batch.csv
+    └── sample_pvc.csv
 ```
 
 ---
@@ -74,8 +88,8 @@ ecg-app/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/Yogasree-21122006/PulseSense-AI.git
-cd PulseSense-AI
+git clone https://github.com/Yogasree-21122006/ecg-arrhythmia-classifier.git
+cd ecg-arrhythmia-classifier
 pip install -r requirements.txt
 ```
 
@@ -83,28 +97,23 @@ pip install -r requirements.txt
 
 ## ▶️ How to Run
 
-### 1️⃣ Train Model (Optional - Run once)
-
-```bash
-python train_model.py
-```
-
-### 2️⃣ Run the Application
-
 ```bash
 streamlit run frontend.py
 ```
 
 ---
 
-## 🧠 Model Architecture
+## 🧠 Model Details
 
-* LSTM(64) → Dropout(0.3)
-* LSTM(32) → Dropout(0.3)
-* Dense(32) → Dense(4, Softmax)
+**Feature Extraction from ECG Signal:**
+* Statistical features — Mean, Std, Min, Max, RMS, Percentiles
+* Temporal features — First & Second order differences
+* Frequency features — FFT-based spectral analysis
+* Segment features — 5-segment std & range analysis
+* Morphological features — Zero crossings, Peak count, Peak interval std
 
-**Loss Function:** Categorical Crossentropy
-**Optimizer:** Adam
+**Pipeline:**
+* Feature Extraction → Standard Scaling → ML Classifier → Softmax Probabilities
 
 ---
 
@@ -123,15 +132,16 @@ streamlit run frontend.py
 * ☁️ Cloud-based scaling
 * 📡 Real-time IoT ECG device integration
 * 🚨 Automated emergency alerts (SMS/Email)
+* 🧠 Deep Learning (LSTM) model upgrade
 
 ---
 
 ## 🛠️ Technologies Used
 
 * Python
-* TensorFlow / Keras
+* Scikit-learn
 * Streamlit
-* NumPy, Pandas, Scikit-learn
+* NumPy, Pandas, Matplotlib, SciPy
 
 ---
 
@@ -154,4 +164,4 @@ For queries or collaboration:
 
 ---
 
-⭐ If you like this project, don’t forget to give it a star!
+⭐ If you like this project, don't forget to give it a star!
